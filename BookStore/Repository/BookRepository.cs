@@ -21,7 +21,7 @@ namespace BookStore.Repository
 
         public List<BookModel> SearchBook(string title, string authorName)
         {
-            
+            return DataSource().Where(x => x.Title == title && x.Author == authorName).ToList();
         }
 
         private List<BookModel> DataSource()
@@ -29,8 +29,8 @@ namespace BookStore.Repository
             return new List<BookModel>()
             {
                 new BookModel(){Id = 1, Title = "MVC", Author="saint"},
-                new BookModel(){Id = 2, Title = "HTML", Author="ola"},
-                new BookModel(){Id = 3, Title = "CSS", Author="elkay"},
+                new BookModel(){Id = 2, Title = "dot net core", Author="ola"},
+                new BookModel(){Id = 3, Title = "C#", Author="elkay"},
                 new BookModel(){Id = 4, Title = "Javascrip", Author="qbasic"},
                 new BookModel(){Id = 4, Title = "MVC", Author="faitha"},
             };
